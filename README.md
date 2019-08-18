@@ -4,7 +4,7 @@
 [OLIVES Lab, Georgia Institute of Technology](https://ghassanalregib.info/)
 
 # Abstract
-Recognizing textures and materials in real-world images has played an important role in object recognition and scene understanding. Aiming at describing objects or scenes with more detailed information, we explore how to computationally characterize apparent or latent properties (e.g. surface smoothness) of materials, i.e., computational material characterization, which moves a step further beyond material recognition. For this purpose, we introduce a large, publicly available dataset named challenging microscopic material surface dataset (CoMMonS). We utilize a powerful microscope to capture high-resolution images with fine details of fabric surfaces. The CoMMonS dataset consists of 6,912 images covering 24 fabric samples in a controlled environment under varying imaging conditions such as lighting, zoom levels, geometric variations, and touching directions. We use this dataset both to assess the performance of existing deep learning-based algorithms and to develop our own method for material characterization in terms of fabric properties such as fiber length, surface smoothness, and toweling effect.
+Recognizing textures and materials in real-world images has played an important role in object recognition and scene understanding. Aiming at describing objects or scenes with more detailed information, we explore how to computationally characterize apparent or latent properties (e.g. surface smoothness) of materials, i.e., computational material characterization, which moves a step further beyond material recognition. For this purpose, we introduce a large, publicly available dataset named challenging microscopic material surface dataset (CoMMonS). We utilize a powerful microscope to capture high-resolution images with fine details of fabric surfaces. The CoMMonS dataset consists of 6,912 images covering 24 fabric samples in a controlled environment under varying imaging conditions such as lighting, zoom levels, geometric variations, and touching directions. This dataset can be used to assess the performance of existing deep learning-based algorithms and to develop our own method for material characterization in terms of fabric properties such as fiber length, surface smoothness, and toweling effect.
 
 # Dataset
 
@@ -24,13 +24,15 @@ unzip CoMMonS_FullResolution.zip
 unzip CoMMonS_Sampled.zip
 ```
 
-# Dataset Characteristics
+# Dataset Characteristics and Filename Formats
 We created a comprehensive dataset of images captured at the fabric surfaces under varying conditions. We have 24 samples from "MS1" to "MS24" with subjective quality evaluation for three fabric properties, i.e., fiber length, smoothness and toweling effect, respectively. We acquired images for these samples under varying conditions including six translation positions, two rotation angles, two lighting conditions, two camera zoom levels, three camera function settings (Normal/EDOF/EDR), and two sample conditions regarding touching (or pressing) directions. The pressing directions are included because they will affect a human expert in evaluating the fabric properties. Combining all these conditions, we acquired a dataset of around 6912 images with the characteristics shown as below:
 
-|Material Samples| Translation positions | Rotation Angles | Lighting Conditions | Camera Zoom Levels |Camera Function Settings | Sample Conditions |
+|Material Samples| Translation Positions | Rotation Angles | Lighting Conditions | Camera Zoom Levels |Camera Function Settings | Sample Conditions |
 |---| --- | --- |--- | --- |--- | --- |
 | 24 | 6 | 2 | 2 | 2 (50/200) |3 (Normal/EDOF/EDR) | 2 (towards/opposite the pile location)|
 |MS1 to MS24| x:{15, 50}, y:{128, 168, 208} | "r-30", "r60" | "l4", "l5"|z:{50, 200} |{"n", "ef3u", "edr"} | {"pile", "opp"} |
+
+The "CoMMonS_FullResolution" folder includes 6912 full resolution images (2560x1920). The "CoMMonS_Sampled" folder includes sampled images (resolution: 300x300), which are sampled from full resolution images with different positions (x, y), rotation angles (r), zoom levels (z), a touching direction ("pile"), a lightness condition ("l5"), and a camera function setting ("ed3u"). This "CoMMonS_Sampled" folder is an example of a dataset subset for training and testing (e.g. 5: 1). Our dataset focuses on material characterization for one material (fabric) in terms of one of three properties (fiber length, smoothness, and toweling effect), facilitating a fine-grained texture classification. In this particular case, the dataset is used for a standard supervised problem of material quality evaluation. It takes fabric samples with human expert ratings as training inputs, and takes fabric samples without human subject ratings as testing inputs to predict quality ratings of the testing samples. The texture patches are classified into 4 classes according to each surface property measured by human sense of touch. For example, the human expert rates surface fiber length into 4 levels, from 1 (very short) to 4 (long), and similarly for smoothness and toweling effect. In short, the "CoMMonS_Sampled" folder includes 9 subfolders, each of which inclues both sampled images and attribute class labels.
 
 # Citation
 If you use CoMMonS dataset, please cite:
