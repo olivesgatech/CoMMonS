@@ -8,7 +8,7 @@ Recognizing textures and materials in real-world images has played an important 
 
 # Dataset
 
-![CoMMonS Texture Dataset](https://github.com/yutinghu/CoMMonS/blob/master/thumbnail_commonsdataset.png)
+![CoMMonS Texture Dataset](https://github.com/olivesgatech/CoMMonS/blob/master/thumbnail_commonsdataset.png)
 
 A carefully designed imaging system is critical for the analysis of fabric surface images. This imaging system needs to be powerful enough to capture the fine details of fabric surfaces, which reveal the textural differences that characterize the fabrics. To accomplish this task, we use a commercial imager, Dino-lite AM73915MZT for our imaging system. Some key features of this microscope include: an optical magnification power ranging from 10X to 220X; a high resolution of 2560x1920 pixels; an automatic magnification reading (AMR) function that enables automatic magnification rate recording; an extended depth of field (EDOF) that provides enhanced image quality at high magnification rates; and an enhanced dynamic range (EDR) that provides enhanced image quality for limited dynamic range conditions. You can see our dataset acquisition setup [Demo Video1](https://www.dropbox.com/s/9eddk38fakyopap/Setup_video1.mp4?dl=0) and [Demo Video2](https://www.dropbox.com/s/qc9hhikstzo7xsq/Setup_video2.mp4?dl=0) here.
 
